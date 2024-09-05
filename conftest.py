@@ -1,7 +1,6 @@
 import pytest
+import user_data
 from selenium import webdriver
-
-import helpers
 
 
 @pytest.fixture(scope='function', params=['chrome', 'firefox'])
@@ -23,6 +22,6 @@ def driver(request):
 
 @pytest.fixture(scope='function')
 def user():
-    user = helpers.register_new_user_and_return_user_data()
+    user = user_data.register_new_user_and_return_user_data()
     yield user
-    helpers.delete_user(user['json']['accessToken'])
+    user_data.delete_user(user['json']['accessToken'])

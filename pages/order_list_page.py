@@ -39,3 +39,7 @@ class OrderList(BasePage):
     @allure.step('Собираем текст с номера заказа')
     def get_text_from_order_number(self):
         return self.get_text(ProfilePageLocators.ORDER_NUMBER)
+
+    @allure.step('Собираем текст с листа заказов')
+    def get_text_from_order_list(self):
+        return self.get_text(OrderListLocators.ORDER_LIST_TEXT)

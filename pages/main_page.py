@@ -1,7 +1,7 @@
 import allure
+
 from pages.base_page import BasePage
 from locators.main_page_locators import MainPageLocators
-from locators.order_list_page_locators import OrderListLocators
 
 
 class MainPage(BasePage):
@@ -45,10 +45,6 @@ class MainPage(BasePage):
     @allure.step('Собираем текст с кнопки логин')
     def get_text_from_login_button(self):
         return self.get_text(MainPageLocators.LOGIN_BUTTON)
-
-    @allure.step('Собираем текст с листа заказов')
-    def get_text_from_order_list(self):
-        return self.get_text(OrderListLocators.ORDER_LIST_TEXT)
 
     @allure.step('Собираем текст с окна ингридиентов')
     def get_text_from_ingredients_details(self):

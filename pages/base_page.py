@@ -35,11 +35,11 @@ class BasePage:
 
     @allure.step('Собираем текст с элемента')
     def get_text(self, locator, time=15):
-        return WebDriverWait(self.driver, time).until(ec.presence_of_element_located(locator)).text
+        return self.presence_element(locator, time).text
 
     @allure.step('Ожидаем элемент и кликаем по нему')
     def click_element(self, locator, time=15):
-        WebDriverWait(self.driver, time).until(ec.visibility_of_element_located(locator)).click()
+        self.presence_element(locator, time).click()
 
     @allure.step('Перемещаемся до элемента и кликаем')
     def move_to_element_and_click(self, locator):
